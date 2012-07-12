@@ -1,0 +1,23 @@
+<h1>Listing moods</h1>
+
+<table>
+  <tr>
+    <th>Kind</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @moods.each do |mood| %>
+  <tr>
+    <td><%= mood.kind %></td>
+    <td><%= link_to 'Show', mood %></td>
+    <td><%= link_to 'Edit', edit_mood_path(mood) %></td>
+    <td><%= link_to 'Destroy', mood, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mood', new_mood_path %>
